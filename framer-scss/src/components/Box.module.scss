@@ -1,0 +1,28 @@
+@reference "../styles/tailwind.css";
+
+.box {
+  // Use Tailwind's @apply to apply tailwind classes inside SCSS
+  @apply flex flex-col p-6 rounded-2xl transition-all duration-300 shadow-lg text-white w-64 h-48 justify-between;
+  
+  // Custom SCSS styles (Glassmorphism + custom gradients)
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  
+  h1 {
+    @apply text-xl font-semibold tracking-wide;
+    background: linear-gradient(to right, #ffffff, #a3a3a3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    @apply text-sm opacity-70 leading-relaxed font-light;
+  }
+
+  // Micro-animations on hover
+  &:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
